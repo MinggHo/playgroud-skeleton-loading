@@ -1,0 +1,19 @@
+.info-box {
+  display: flex;
+  @include apply-utility('bg', 'yellow-01');
+  padding: 0.5rem 1rem;
+  box-shadow: 0px 4px 24px rgba(123, 123, 123, 0.25);
+  border-radius: 8px;
+  color: get-color('purple-01');
+  @include apply-utility('font', 'serif');
+  letter-spacing: 0.02rem;
+  font-style: italic;
+  max-width: 53ch;
+}
+.info-box__icon {
+  margin-right: 1rem;
+  margin-top: 0.1rem;
+}
+.info-box__text {
+  flex: 1;
+}

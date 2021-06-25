@@ -1,0 +1,45 @@
+.intro {
+  display: flex;
+  flex-flow: column;
+  .info {
+    @include media-query('md') {
+      flex: 1;
+      max-width: 44ch;
+    }
+  }
+  .image {
+    order: -1;
+    position: relative;
+    right: -90px;
+    margin-bottom: 1rem;
+    margin-top: -3rem;
+    @include media-query('md') {
+      right: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      flex: 0 0 608px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 280px;
+      @media screen and (max-width: 375px) and (max-height: 800px) {
+        height: 170px;
+        object-fit: contain;
+      }
+      @include media-query('md') {
+        max-width: 100%;
+        height: auto;
+        object-fit: unset;
+      }
+    }
+    @include media-query('md') {
+      order: 1;
+    }
+  }
+  @include media-query('md') {
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

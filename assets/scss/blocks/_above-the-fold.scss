@@ -1,0 +1,36 @@
+#above-the-fold {
+  min-height: 100vh;
+  display: flex;
+  place-items: center;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-color: #481CE0;
+
+  .webp-support & {
+    background-image: url('/assets/images/webp/mobile-bg.webp');
+  }
+  .no-webp & {
+    background-image: url('/assets/images/png/mobile-bg.png');
+  }
+  @include media-query('md') {
+    .webp-support & {
+      background-image: url('/assets/images/webp/bg.webp');
+    }
+    .no-webp & {
+      background-image: url('/assets/images/png/bg.png');
+    } 
+  }
+  @include media-query('lg') {
+    .webp-support & {
+      background-image: url('/assets/images/webp/bg-lg.webp');
+    }
+    .no-webp & {
+      background-image: url('/assets/images/png/bg-lg.png');
+    } 
+  }
+}
+
+ 

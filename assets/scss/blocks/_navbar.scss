@@ -1,0 +1,33 @@
+.navbar__block {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar__logo {
+  transition: transform .5s ease-in-out;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: get-spacing('400');
+  padding-bottom: get-spacing('400');
+
+  will-change: padding;
+  transition: padding .3s ease-in-out;
+  &.mini {
+    padding-top: get-spacing('300');
+    padding-bottom: get-spacing('300');
+    .navbar__logo {
+      transform: scale(0.9);
+    }
+  }
+
+  @include media-query('md') {
+    justify-content: flex-start;
+  }
+}
+

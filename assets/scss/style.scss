@@ -1,0 +1,115 @@
+@charset 'utf-8';
+
+// First up: config
+@import 'config';
+@import 'get-spacing';
+
+// Next: Pull in gorko for design tokens
+@import '../../node_modules/gorko/gorko';
+
+// Reset
+@import 'reset';
+
+// Typography
+@import 'typography';
+
+// Blocks
+@import './blocks/navbar';
+@import './blocks/social-share';
+@import './blocks/floating-nav';
+@import './blocks/above-the-fold';
+@import './blocks/button';
+@import './blocks/intro';
+@import './blocks/outro';
+@import './blocks/video';
+@import './blocks/title';
+@import './blocks/cta';
+@import './blocks/description-section';
+@import './blocks/product';
+@import './blocks/info-box';
+@import './blocks/youbelong-hoc';
+@import './blocks/graphic-box';
+@import './blocks/form';
+@import './blocks/progress-bar';
+@import './blocks/menu';
+@import './blocks/slider';
+@import './blocks/modal';
+@import './blocks/lightbox';
+@import './blocks/quiz';
+
+// Utilities
+@import './utilities/wrapper';
+@import './utilities/flow';
+@import './utilities/full-bleed';
+@import './utilities/text-center';
+@import './utilities/overflow';
+@import './utilities/text-icon';
+@import './utilities/responsive-iframe';
+
+// html, body {
+//   background-color: #E8F6F6;
+//   overflow-x: hidden;
+// }
+
+// body {
+//   overflow-x: hidden;
+// }
+
+
+/* Just some Shame~ */
+
+.main__block {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  place-content: center;
+  background: url('/assets/images/intro-background.png'), #FFF9DD;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.intro {
+  margin: clamp(24px, 10vh, 48px) clamp(16px, 10vw, 24px);
+  text-align: center;
+}
+
+
+/* Skeleton Loader */
+body {
+  visibility: hidden;
+}
+
+#loader {
+  visibility: visible;
+  height: 100vh;
+}
+
+/* Social Share */
+#social-share {
+  display: flex;
+  padding: 0.35rem 1rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 14px;
+  color: #FFF;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: get-color('secondary');
+  transition: background-color 300ms ease-in-out;
+  align-self: center;
+
+  &:hover,
+  &:active,
+  &:focus  {
+    background-color: lighten($color: get-color('secondary'), $amount: 15);
+    border-color: transparent;
+  }
+}
+
+
+
+/* Social Share */
+.social-share-icon {
+  display: block;
+  width: 1.75rem;
+}

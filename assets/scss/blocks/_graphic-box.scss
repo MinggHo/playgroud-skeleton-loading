@@ -1,0 +1,31 @@
+.graphic-box {
+  padding: 32px 48px;
+  border: 4px solid get-color('yellow-01');
+  border-radius: 1rem;
+  @include media-query('md') {
+    padding: 24px 56px;
+  }
+}
+
+.graphic-box__images {
+  display: flex;
+  flex-direction: column;
+
+  :is(picture + picture, img + img) {
+    margin-top: 1.5rem;
+  }
+
+  @include media-query('md') {
+    align-items: flex-end;
+    flex-direction: row;
+    :is(picture + picture, img + img) {
+      margin-left: 2.5rem;
+      margin-top: 0;
+    }
+  }
+}
+
+.graphic-box__images-item {
+  object-fit: contain;
+  width: 100%;
+}

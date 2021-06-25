@@ -1,0 +1,35 @@
+#youbelong-hoc {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+  background: linear-gradient(119.73deg, #3DB6D0 5.6%, #4B22D9 106.42%);
+
+  .info {
+    max-width: 29ch;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+
+    @include media-query('md') {
+      max-width: 60ch;
+      text-align: start;
+    }
+  }
+  .info__block {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    @include media-query('md') {
+      flex-flow: row;
+    }
+    > div {
+      flex: 1;
+    }
+  }
+}

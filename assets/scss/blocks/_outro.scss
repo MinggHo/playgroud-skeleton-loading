@@ -1,0 +1,41 @@
+#outro {
+  display: flex; 
+  align-items: center;
+  position: relative;
+  background: #24C7AA;
+  background: linear-gradient(119.73deg, #24C7AA 5.6%, #512CD1 106.42%);
+}
+
+.outro {
+  display: flex;
+  flex-flow: column;
+  .info {
+    @include media-query('md') {
+      flex: 1;
+      max-width: 44ch;
+    }
+  }
+  .image {
+    order: -1;
+    margin-bottom: 1rem;
+    @include media-query('md') {
+      right: 0;
+      margin-bottom: 0;
+      flex: 0 0 608px;
+      order: 1;
+    }
+    img {
+      width: 100%;
+      height: clamp(180px, 30vh, 240px);
+      object-fit: contain;
+      @include media-query('md') {
+        height: auto;
+      }
+    }
+  }
+  @include media-query('md') {
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

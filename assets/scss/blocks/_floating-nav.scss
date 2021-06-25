@@ -1,0 +1,20 @@
+.floating-nav {
+  display: none;
+  position: absolute;
+  left: 1.5rem;
+  bottom: 3rem;
+  @include media-query('md') {
+    display: block;
+  }
+  &[data-mobile="true"] {
+    display: block;
+  }
+}
+
+.section-navigation,
+.section-navigation-start {
+  background: none;
+  border: none;
+  display: flex;
+  cursor: pointer;
+}

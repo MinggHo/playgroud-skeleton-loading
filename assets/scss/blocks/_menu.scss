@@ -1,0 +1,153 @@
+.menu {
+  position: fixed;
+  top: calc(40px + 2rem);
+  right: 1rem;
+
+  background-color: get-color('blue-01');
+
+  z-index: 9;
+
+  transition: transform 0.3s ease-in-out;
+
+  &.hide {
+    transform: translateX(1rem);
+    @include media-query('md') {
+      transform: translateX(80px);
+    }
+    &:hover {
+      transform: translateX(20px);
+    }
+  }
+
+  @include media-query('md') {
+    right: 2rem;
+  }
+}
+
+.menu__button {
+  border: none;
+  background: transparent;
+  display: block;
+  line-height: 1;
+  width: 100%;
+  height: auto;
+  line-height: 0;
+  cursor: pointer;
+  border: 1px solid get-color('blue-01');
+  padding: 0.5rem 0.75rem;
+  
+  
+  svg {
+    width: 18px;
+    height: 18px;
+    @include media-query('md') {
+      width: 24px;
+      height: 28px;
+    }
+  }
+  
+  @include media-query('md') {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.menu__overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  background: linear-gradient(270deg, #3252E2 39.79%, rgba(109, 87, 185, 0.28) 280%);
+  
+  @include media-query('md') {
+    background: linear-gradient(270deg, #3252E2 19.79%, rgba(109, 87, 185, 0.28) 100%);
+  }
+
+  display: none;
+
+  animation: fade-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.menu__block {
+  position: fixed;
+  top: calc(40px + 3rem);
+  right: 2rem;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+
+  animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.menu__nav {
+  display: flex;
+  flex-flow: column;
+  justify-content: stretch;
+  align-items: flex-end;
+  list-style: none;
+  .nav-items {
+    border: 2px solid #48AC9F;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: transparent;
+    transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out 0.1s; 
+    
+    color: currentColor;
+    text-decoration: none;
+    
+    &:hover {
+      border-color: get-color('yellow-01');
+      background-color: #294ae0;
+    }
+  }
+}
+
+.menu__close-button {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+ @keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+ @keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+ @keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+	animation: fade-out 300ms ease-out both;
+}

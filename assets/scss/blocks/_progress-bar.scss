@@ -1,0 +1,39 @@
+.progress-bar--mobile {
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  background-color: #78BABA;
+  height: 16px;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    background-color: #6D57B9;
+    height: 16px;
+    border-radius: 0 32px 32px 0;
+    transition: width 300ms ease-out;
+  }
+
+  &[data-percentage='25'] {
+    &::before {
+      width: 25%;
+    }
+  }
+  &[data-percentage='50'] {
+    &::before {
+      width: 50%;
+    }
+  }
+  &[data-percentage='75'] {
+    &::before {
+      width: 75%;
+    }
+  }
+  &[data-percentage='100'] {
+    &::before {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+}

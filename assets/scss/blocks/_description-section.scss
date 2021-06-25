@@ -1,0 +1,22 @@
+#description-section {
+  padding-top: clamp(180px, 10vh, 200px) !important;
+  .webp-support & {
+    background: top right / clamp(220px, 32vh, 460px) url("/assets/images/webp/image-township.webp") no-repeat, linear-gradient(119.73deg, #3DB6D0 5.6%, #028BC0 106.42%);
+  }
+  
+  .no-webp & {
+    background: top right / clamp(220px, 32vh, 460px) url("/assets/images/webp/image-township.webp") no-repeat, linear-gradient(119.73deg, #3DB6D0 5.6%, #028BC0 106.42%);
+  }
+  @include media-query('md') {
+    padding-top: 0 !important;
+
+    .webp-support & {
+      background: top center / cover url("/assets/images/webp/bg-2.webp") no-repeat;
+    }
+    
+    .no-webp & {
+      background: top center / cover url("/assets/images/png/bg-2.png") no-repeat;
+    }
+  
+  }
+}
